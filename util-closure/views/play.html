@@ -1,0 +1,31 @@
+<tal:block metal:use-macro="layouts/base.html/page_template">
+    <!-- START metal:fill-slot="content" -->
+    <tal:block metal:fill-slot="content">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Added</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr tal:repeat="item list_transactions">
+					<td tal:content="item/iId"></td>
+	                <td tal:content="item/sTitle"></td>
+	                <td tal:content="item/sDescription"></td>
+	                <td tal:content="item/tDateAdded"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<script type="text/javascript">
+			$( document ).ready( function() {
+				console.log( 'blah' );
+				$( '#list_transactions' ).load( '${sUrlBase}ajax/get_atomic_transactions/1' );
+			} );
+		</script>
+    </tal:block>
+	<!--  END  metal:fill-slot="content" -->
+</tal:block>
