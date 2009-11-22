@@ -1,0 +1,12 @@
+
+# HOWTO add items to the repo
+git add README
+
+# HOWTO make commits
+git commit -m 'first commit'
+
+# initially, need to connect with the remote
+git remote add origin git@github.com:gbtekkie/playground.git
+
+# after making changes, this is how you push changes to github repo
+git push origin master
